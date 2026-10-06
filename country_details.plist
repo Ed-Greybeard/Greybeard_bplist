@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>title</key>
+	<string>Country Details — Viewer Demonstration</string>
+	<key>description</key>
+	<string>Illustrative country profiles. Population figures are rounded sample values, not current statistics.</string>
+	<key>created</key>
+	<date>2026-10-06T12:00:00Z</date>
+	<key>countries</key>
+	<array>
+		<dict>
+			<key>name</key>
+			<string>Japan</string>
+			<key>code</key>
+			<string>JP</string>
+			<key>capital</key>
+			<string>Tokyo</string>
+			<key>region</key>
+			<string>Asia</string>
+			<key>population_example</key>
+			<integer>123000000</integer>
+			<key>area_km2_example</key>
+			<real>378000.0</real>
+			<key>languages</key>
+			<array>
+				<string>Japanese</string>
+			</array>
+			<key>currency</key>
+			<dict>
+				<key>code</key>
+				<string>JPY</string>
+				<key>name</key>
+				<string>Japanese yen</string>
+			</dict>
+			<key>island_country</key>
+			<true/>
+			<key>cities</key>
+			<array>
+				<string>Tokyo</string>
+				<string>Osaka</string>
+				<string>Kyoto</string>
+			</array>
+			<key>local_name</key>
+			<string>日本</string>
+			<key>notes</key>
+			<string>Search for Tokyo or Asia.
+Unicode text: 日本</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>France</string>
+			<key>code</key>
+			<string>FR</string>
+			<key>capital</key>
+			<string>Paris</string>
+			<key>region</key>
+			<string>Europe</string>
+			<key>population_example</key>
+			<integer>68000000</integer>
+			<key>area_km2_example</key>
+			<real>552000.0</real>
+			<key>languages</key>
+			<array>
+				<string>French</string>
+			</array>
+			<key>currency</key>
+			<dict>
+				<key>code</key>
+				<string>EUR</string>
+				<key>name</key>
+				<string>Euro</string>
+			</dict>
+			<key>island_country</key>
+			<false/>
+			<key>cities</key>
+			<array>
+				<string>Paris</string>
+				<string>Lyon</string>
+				<string>Marseille</string>
+			</array>
+			<key>local_name</key>
+			<string>France</string>
+			<key>notes</key>
+			<string>Search for Europe to find multiple country profiles.</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Germany</string>
+			<key>code</key>
+			<string>DE</string>
+			<key>capital</key>
+			<string>Berlin</string>
+			<key>region</key>
+			<string>Europe</string>
+			<key>population_example</key>
+			<integer>84000000</integer>
+			<key>area_km2_example</key>
+			<real>357000.0</real>
+			<key>languages</key>
+			<array>
+				<string>German</string>
+			</array>
+			<key>currency</key>
+			<dict>
+				<key>code</key>
+				<string>EUR</string>
+				<key>name</key>
+				<string>Euro</string>
+			</dict>
+			<key>island_country</key>
+			<false/>
+			<key>cities</key>
+			<array>
+				<string>Berlin</string>
+				<string>Hamburg</string>
+				<string>Munich</string>
+			</array>
+			<key>local_name</key>
+			<string>Deutschland</string>
+			<key>notes</key>
+			<string>France and Germany share the EUR currency code.</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Brazil</string>
+			<key>code</key>
+			<string>BR</string>
+			<key>capital</key>
+			<string>Brasília</string>
+			<key>region</key>
+			<string>South America</string>
+			<key>population_example</key>
+			<integer>203000000</integer>
+			<key>area_km2_example</key>
+			<real>8516000.0</real>
+			<key>languages</key>
+			<array>
+				<string>Portuguese</string>
+			</array>
+			<key>currency</key>
+			<dict>
+				<key>code</key>
+				<string>BRL</string>
+				<key>name</key>
+				<string>Brazilian real</string>
+			</dict>
+			<key>island_country</key>
+			<false/>
+			<key>cities</key>
+			<array>
+				<string>Brasília</string>
+				<string>São Paulo</string>
+				<string>Rio de Janeiro</string>
+			</array>
+			<key>local_name</key>
+			<string>Brasil</string>
+			<key>notes</key>
+			<string>Accented names demonstrate Unicode display and export.</string>
+		</dict>
+	</array>
+	<key>feature_examples</key>
+	<dict>
+		<key>binary_data</key>
+		<data>
+		Q291bnRyeSBkZW1vAAEC/w==
+		</data>
+		<key>uid_reference</key>
+		<dict>
+			<key>CF$UID</key>
+			<integer>42</integer>
+		</dict>
+		<key>empty_array</key>
+		<array/>
+		<key>empty_dictionary</key>
+		<dict/>
+		<key>long_text</key>
+		<string>This full text is available in the detail pane even when the tree preview is truncated. This full text is available in the detail pane even when the tree preview is truncated. This full text is available in the detail pane even when the tree preview is truncated. This full text is available in the detail pane even when the tree preview is truncated. This full text is available in the detail pane even when the tree preview is truncated. </string>
+		<key>regex_examples</key>
+		<array>
+			<dict>
+				<key>pattern</key>
+				<string>Europe</string>
+				<key>purpose</key>
+				<string>Step through nodes containing Europe.</string>
+			</dict>
+			<dict>
+				<key>pattern</key>
+				<string>Tokyo|Paris|Berlin</string>
+				<key>purpose</key>
+				<string>Find several capitals and city entries.</string>
+			</dict>
+			<dict>
+				<key>pattern</key>
+				<string>^EUR$</string>
+				<key>purpose</key>
+				<string>Find exact currency-code values.</string>
+			</dict>
+			<dict>
+				<key>pattern</key>
+				<string>population_example</string>
+				<key>purpose</key>
+				<string>Find keys and paths for population fields.</string>
+			</dict>
+			<dict>
+				<key>pattern</key>
+				<string>日本|Brasília</string>
+				<key>purpose</key>
+				<string>Find Unicode text.</string>
+			</dict>
+		</array>
+	</dict>
+</dict>
+</plist>

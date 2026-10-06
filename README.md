@@ -7,7 +7,7 @@ python3 bplist_viewer.py
 python3 bplist_viewer.py /path/to/file.bplist
 ```
 
-Open binary (`bplist00`) or XML plists regardless of filename extension. Expand/collapse nodes using the tree arrows, keyboard arrows, or toolbar. Select a node to see its full value and path. Binary data is displayed as Base64 and hexadecimal. UID references are displayed as values; NSKeyedArchiver objects are not automatically unarchived.
+Open binary (`bplist00`) or standard non-binary XML plists regardless of filename extension. The format is detected from file contents and displayed in the status bar. XML files with a UTF-8 BOM or UTF-16 encoding are supported. Both formats use the same tree, search, and export features. Expand/collapse nodes using the tree arrows, keyboard arrows, or toolbar. Select a node to see its full value and path. Binary data is displayed as Base64 and hexadecimal. UID references are displayed as values; NSKeyedArchiver objects are not automatically unarchived.
 
 Regex search checks each node's key, path, type, and complete value (including data encodings). Press Enter or Search, then Previous/Next or Shift-F3/F3 to cycle through matching nodes in tree order. Each node appears once in the results even if multiple fields match. Search opens collapsed ancestors. Ignore case is enabled by default. Changing the pattern or case option clears previous results; press Search again.
 
@@ -38,3 +38,11 @@ python3 bplist_viewer.py examples/country_details.bplist
 The country demonstration includes nested profiles, city/language arrays, Unicode names, booleans, integers, real numbers, a date, binary data, a UID, empty containers, and a long value. Population and area figures are rounded illustrative values, not current statistics.
 
 Try regex searches for `Europe`, `Tokyo|Paris|Berlin`, `^EUR$`, or `日本|Brasília`, then step through the results. The `feature_examples` branch contains additional suggested searches. Export the file as JSON to see how data, dates, and UID values are represented.
+
+An equivalent XML example is included alongside the binary file:
+
+```sh
+python3 bplist_viewer.py examples/country_details.plist
+```
+
+Both examples contain the same country data. XML plists cannot encode UID values directly, so the XML example represents UID 42 as a dictionary with `CF$UID` set to `42`; the viewer displays it as a dictionary.

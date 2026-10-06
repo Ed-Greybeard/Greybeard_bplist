@@ -10,15 +10,27 @@ import plistlib
 import re
 import tkinter as tk
 from tkinter import filedialog, messagebox, ttk
+import xml.etree.ElementTree as ET
+
+
+def load_document(path):
+    """Detect by content, returning (value, human-readable format)."""
+    contents = Path(path).read_bytes()
+    if contents.startswith(b'bplist'):
+        if contents[:8] != b'bplist00':
+            raise ValueError(f'Unsupported binary plist version: {contents[:8]!r}')
+        return plistlib.loads(contents, fmt=plistlib.FMT_BINARY), 'Binary plist'
+    try:
+        root = ET.fromstring(contents)
+    except ET.ParseError as error:
+        raise ValueError('File is neither a binary plist nor a valid XML plist.') from error
+    if root.tag != 'plist':
+        raise ValueError('XML document must have a <plist> root element.')
+    return plistlib.loads(contents, fmt=plistlib.FMT_XML), 'XML plist'
 
 
 def load_plist(path):
-    with open(path, 'rb') as source:
-        header = source.read(8)
-        source.seek(0)
-        if header.startswith(b'bplist') and header != b'bplist00':
-            raise ValueError(f'Unsupported binary plist version: {header!r}')
-        return plistlib.load(source)
+    return load_document(path)[0]
 
 
 def type_name(value):
@@ -168,7 +180,7 @@ class Viewer(ttk.Frame):
         if not path:
             return
         try:
-            data = load_plist(path)
+            data, file_format = load_document(path)
             nodes = list(walk_nodes(data))
         except Exception as error:
             messagebox.showerror('Unable to open plist', str(error))
@@ -189,7 +201,7 @@ class Viewer(ttk.Frame):
         self.tree.focus('0')
         self.show_detail()
         self.master.title(f'{self.filename.name} — Binary Plist Viewer')
-        self.status.set(f'{self.filename}  •  {len(nodes)} nodes')
+        self.status.set(f'{self.filename}  •  {file_format}  •  {len(nodes)} nodes')
 
     def show_detail(self, *_):
         selection = self.tree.selection()
